@@ -1,4 +1,6 @@
 CHANGES
 =======
 
+* allen: 完成对tornado handler, timer, httpclient的封装。完成日志，配置文件加载封装与测试。
+* allen: build first package succeed
 * allen: init
