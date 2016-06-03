@@ -1,0 +1,18 @@
+Metadata-Version: 1.1
+Name: noni
+Version: 0.0.0
+Summary: ...
+Home-page: https://github.com/Allen5/noni
+Author: Allen.Wu
+Author-email: allenlikeu@gmail.com
+License: MIT
+Description: # Noni
+        
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technology
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
