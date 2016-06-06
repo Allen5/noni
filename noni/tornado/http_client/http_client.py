@@ -13,6 +13,7 @@
 import tornado.gen
 from tornado.web import asynchronous
 from tornado.httpclient import HTTPClient
+from tornado.httpclient import HTTPRequest
 from tornado.httpclient import AsyncHTTPClient
 
 # 定义
@@ -40,32 +41,28 @@ class HttpClient:
         if not method:
             raise HttpClientMethodError, "method wrong"
 
-        # 无需整合
-        if not params:
-            return url, params
-
+        request = None
         if method == HTTP_METHOD_POST:
             import urllib
-            params = urllib.encode(data)
+            params = urllib.urlencode(params)
+            request = HTTPRequest(url=url, method=method, body=params, request_timeout=3)
         elif method == HTTP_METHOD_GET:
             from tornado.httputil import url_concat
             url = url_concat(url, params)
-        return url, params
+            request = HTTPRequest(url=url, method=method, request_timeout=3)
+        return request
 
     def sync_fetch(self, url, method=HTTP_METHOD_GET, params=None):
         """
         """
         # 打包数据
-        url, params = self._pack_data(url, method, params)
+        request = self._pack_data(url, method, params)
 
         http_client = HTTPClient()
         response = {}
         try:
-            if method == const.GET:
-                response = http_client.fetch(url, method)
-            elif method == const.POST:
-                response = http_client.fetch(url, method, body=body)
-        except httpclient.HTTPError as error:
+            response = http_client.fetch(request)
+        except tornado.web.HTTPError as error:
             raise HttpClientFetchError, str(error)
         except Exception as error:
             raise HttpClientFetchError, str(error)
@@ -83,14 +80,11 @@ class HttpClient:
             raise HttpClientCallbackError, "callback is wrong"
 
         # 先打包数据
-        url, params = self._pack_data(url, method, params)
+        request = self._pack_data(url, method, params)
 
         # 发起请求
         http_client = AsyncHTTPClient()
-        if method == const.POST:
-            http_client.fetch(url, request_timeout=3, callback=callback, body=params)
-        elif method == const.GET:
-            http_client.fetch(url, request_timeout=3, callback=callback)
+        http_client.fetch(request, callback=callback)
         http_client.close()
 
     @asynchronous
@@ -99,15 +93,10 @@ class HttpClient:
         """
         """
         # 打包数据
-        url, params = self._pack_data(url, method, params)
+        request = self._pack_data(url, method, params)
 
         http_client = AsyncHTTPClient()
-        response = {}
-        if method == const.GET:
-            response = yield http_client.fetch(url, method=method, request_timeout=3)
-        elif method == const.POST:
-            response = yield http_client.fetch(url, method=method, request_timeout=3, body=params)
-        http_client.close()
+        response = yield http_client.fetch(request)
 
         if not response:
             yield response

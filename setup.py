@@ -11,4 +11,6 @@
 import setuptools
 
 # 配置项
-setuptools.setup(setup_requires=['pbr'], pbr=True)
+setuptools.setup(
+    setup_requires=['pbr'],
+    pbr=True)

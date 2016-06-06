@@ -1,6 +1,6 @@
 AUTHORS
 ChangeLog
-README.md
+README.rst
 setup.cfg
 setup.py
 .eggs/README.txt
@@ -67,8 +67,6 @@ setup.py
 .eggs/pbr-1.10.0-py2.7.egg/pbr/tests/testpackage/pbr_testpackage/package_data/1.txt
 .eggs/pbr-1.10.0-py2.7.egg/pbr/tests/testpackage/pbr_testpackage/package_data/2.txt
 .eggs/pbr-1.10.0-py2.7.egg/pbr/tests/testpackage/src/testext.c
-dist/noni-0.0.0-py2.7.egg
-dist/noni-0.0.0.tar.gz
 docs/intro.md
 docs/quickstart.md
 noni/__init__.py
@@ -77,6 +75,7 @@ noni.egg-info/SOURCES.txt
 noni.egg-info/dependency_links.txt
 noni.egg-info/not-zip-safe
 noni.egg-info/pbr.json
+noni.egg-info/requires.txt
 noni.egg-info/top_level.txt
 noni/base/__init__.py
 noni/base/constant.py
@@ -103,6 +102,8 @@ noni/tests/test_logger/test_logger.py
 noni/tests/test_logger/wrong_format.conf
 noni/tests/test_scrapy/__init__.py
 noni/tests/test_tornado/__init__.py
+noni/tests/test_tornado/test_http_client/__init__.py
+noni/tests/test_tornado/test_http_client/test_http_client.py
 noni/tests/test_twisted/__init__.py
 noni/tests/test_util/__init__.py
 noni/tornado/__init__.py
