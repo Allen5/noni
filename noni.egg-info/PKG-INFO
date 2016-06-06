@@ -1,6 +1,6 @@
 Metadata-Version: 1.1
 Name: noni
-Version: 1.0.0.dev3
+Version: 1.0.0.dev4
 Summary: ...
 Home-page: https://github.com/Allen5/noni
 Author: Allen.Wu
@@ -16,4 +16,3 @@ Classifier: Intended Audience :: Developers
 Classifier: Intended Audience :: Information Technology
 Classifier: License :: OSI Approved :: Apache Software License
 Classifier: Operating System :: OS Independent
-Classifier: Programming Lauguage :: python

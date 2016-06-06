@@ -1,6 +1,7 @@
 AUTHORS
 ChangeLog
 README.rst
+requirements.txt
 setup.cfg
 setup.py
 .eggs/README.txt
@@ -67,6 +68,7 @@ setup.py
 .eggs/pbr-1.10.0-py2.7.egg/pbr/tests/testpackage/pbr_testpackage/package_data/1.txt
 .eggs/pbr-1.10.0-py2.7.egg/pbr/tests/testpackage/pbr_testpackage/package_data/2.txt
 .eggs/pbr-1.10.0-py2.7.egg/pbr/tests/testpackage/src/testext.c
+dist/noni-1.0.0.dev3.tar.gz
 docs/intro.md
 docs/quickstart.md
 noni/__init__.py
