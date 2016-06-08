@@ -50,7 +50,6 @@ class HttpClient:
         request = None
         if method == HTTP_METHOD_POST:
             import urllib
-            params = urllib.urlencode(params)
             request = HTTPRequest(url=url, method=method, body=params, request_timeout=3)
         elif method == HTTP_METHOD_GET:
             from tornado.httputil import url_concat

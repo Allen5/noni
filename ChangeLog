@@ -1,6 +1,7 @@
 CHANGES
 =======
 
+* allen: change dst
 * allen: change log updated
 * wenqing: 修正http_client sync_fetch的bug
 * allen: add dev2 package
