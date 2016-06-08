@@ -1,6 +1,7 @@
 CHANGES
 =======
 
+* allen: change log updated
 * wenqing: 修正http_client sync_fetch的bug
 * allen: add dev2 package
 * allen: 完成对tornado handler, timer, httpclient的封装。完成日志，配置文件加载封装与测试。

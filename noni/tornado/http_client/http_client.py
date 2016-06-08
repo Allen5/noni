@@ -33,6 +33,12 @@ class HttpClient:
     """
     __metaclass__ = Singleton
 
+    def _stack_context_handle_exception(self):
+        """
+        此处处理协程出错，但目前还不知道具体的写法是什么
+        """
+        print ""
+
     def _pack_data(self, url, method, params):
         """
         """
@@ -97,6 +103,7 @@ class HttpClient:
 
         http_client = AsyncHTTPClient()
         response = yield http_client.fetch(request)
+        http_client.close()
 
         if not response:
             yield response

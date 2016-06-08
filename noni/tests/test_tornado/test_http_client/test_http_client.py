@@ -28,12 +28,13 @@
 def async_fetch_resp(response):
     """
     """
-    unittest.TestCase.assertEqual(response, "")
+    print "hehehehh"
 
 def async_upload_resp(response):
     """
     """
-    unittest.TestCase.assertEqual(response, "")
+    print "hehehhe"
+    assertEqual(response, "")
 
 import unittest
 from noni.base.singleton import Singleton
@@ -64,22 +65,19 @@ class HttpClientTestCase(unittest.TestCase):
     def test_sync_wrong_url(self):
         """
         """
-        self.assertRaises(HttpClientFetchError, self.http_client.sync_fetch, self.url + "/asdasdsad")
+        resp = self.http_client.sync_fetch(self.url + "/asdasdsa")
+        self.assertEqual(resp, "")
 
     def test_sync_wrong_method(self):
         """
         """
         self.assertRaises(HttpClientFetchError, self.http_client.sync_fetch, self.url, self.method+"xxx")
 
-    def test_sync_timeout(self):
-        """
-        """
-        self.assertRaises(HttpClientFetchError, self.http_client.sync_fetch, self.url+"/get", self.method)
     def test_sync_fetch_data_with_get(self):
         """
         """
-        resp = self.http_client.sync_fetch("http://www.baidu.com")
-        #TODO: 测试返回值是否正常
+        resp = self.http_client.sync_fetch(self.url)
+        self.assertEqual(resp, "{\"value\":0}")
 
     def test_sync_fetch_data_with_post(self):
         """
@@ -140,5 +138,5 @@ class HttpClientTestCase(unittest.TestCase):
     def test_coroutine_fetch_data_with_get(self):
         """
         """
-        resp = self.http_client.coroutine_fetch("http://www.baidu.com")
-        self.assertRaises(resp, "")
+        resp = self.http_client.coroutine_fetch(self.url)
+        self.assertEqual(resp, "")

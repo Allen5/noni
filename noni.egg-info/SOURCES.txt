@@ -69,6 +69,7 @@ setup.py
 .eggs/pbr-1.10.0-py2.7.egg/pbr/tests/testpackage/pbr_testpackage/package_data/2.txt
 .eggs/pbr-1.10.0-py2.7.egg/pbr/tests/testpackage/src/testext.c
 dist/noni-1.0.0.dev3.tar.gz
+dist/noni-1.0.0.dev4.tar.gz
 docs/intro.md
 docs/quickstart.md
 noni/__init__.py
