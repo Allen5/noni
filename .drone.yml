@@ -2,6 +2,7 @@ image: python
 script:
   - cd ../
   - virtualenv noni
+  - cd noni/
   - source bin/activate
   - pip install -r requirements.txt
   - nosetests
