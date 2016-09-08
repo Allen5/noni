@@ -1,0 +1,6 @@
+image: python
+script:
+  - source bin/activate
+  - pip install -r requirements.txt
+  - nosetests
+  - deactivate
